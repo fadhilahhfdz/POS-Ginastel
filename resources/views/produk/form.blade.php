@@ -15,7 +15,7 @@
                             <div class="form-group">
                                 <label for="kode">Kode Produk :</label>
                                 <input type="text" name="kode" class="form-control" value="{{ $kode }}" readonly>
-                            </div>
+                              </div>
                             <div class="form-group">
                                 <label for="nama">Nama Produk :</label>
                                 <input type="text" name="nama" class="form-control">
@@ -23,10 +23,6 @@
                             <div class="form-group">
                                 <label for="harga">Harga Produk:</label>
                                 <input type="text" name="harga" class="form-control jumlah" id="harga">
-                            </div>
-                            <div class="form-group">
-                                <label for="stok">Stok :</label>
-                                <input type="number" name="stok" class="form-control jumlah">
                             </div>
                         </div>
                     </div>

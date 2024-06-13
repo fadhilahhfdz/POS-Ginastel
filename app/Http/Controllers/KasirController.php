@@ -8,6 +8,7 @@ use App\Models\Produk;
 use App\Models\Transaksi;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
+use Barryvdh\DomPDF\Facade\Pdf;
 use Illuminate\Support\Facades\Auth;
 
 class KasirController extends Controller
@@ -54,9 +55,9 @@ class KasirController extends Controller
 
         $subtotal = $data['harga'] * $data['jumlah'];
 
-        $produkSama = Kasir::where('id_produk', $request->id_produk)->first();
+        $produkAda = Kasir::where('id_produk', $request->id_produk)->first();
 
-        if ($produkSama) {
+        if ($produkAda) {
             return redirect('/' . $user->role . '/kasir')->with('warning', 'Barang sudah tersedia');
         } else {
             $kasir = new Kasir;
@@ -68,7 +69,7 @@ class KasirController extends Controller
             $kasir->save();
         }
 
-        return redirect('/' . $user->role . 'kasir');
+        return redirect('/' . $user->role . '/kasir');
     }
 
     /**
@@ -90,14 +91,12 @@ class KasirController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, $id, $id_barang)
+    public function update(Request $request, $id)
     {
         $user = Auth::user();
 
         $data = $request->all();
-        $produk = Produk::find($id_barang);
 
-        if($produk->stok >= $data['jumlah']) {
             $subtotal = $data['harga'] * $data['jumlah'];
 
             $kasir = Kasir::find($id);
@@ -106,9 +105,6 @@ class KasirController extends Controller
             $kasir->update();
 
             return redirect('/' . $user->role . '/kasir');
-        } else {
-            return redirect('/' . $user->role . '/kasir')->with('gagal', $produk->nama . 'tersisa' . $produk->stok);
-        }
     }
 
     /**
@@ -152,21 +148,17 @@ class KasirController extends Controller
                 ]);
 
                 $tanggalSekarang = now('Asia/Jakarta')->format('Y-m-d H:i:s');;
-                $transaksi = new Transaksi();
+                $transaksi = new Transaksi;
                 $transaksi->kode_transaksi = $request->kode_transaksi;
                 $transaksi->total = $request->total;
                 $transaksi->bayar = $request->bayar;
-                $transaksi->kembali = $request->kembalian;
-                $transaksi->kode_kasir = $request->invoice;
+                $transaksi->kembalian = $request->kembalian;
+                $transaksi->invoice = $request->invoice;
                 $transaksi->tanggal = $tanggalSekarang;
                 $transaksi->save();
 
                 foreach($kasir as $data) {
                     $produk = Produk::find($data->id_produk);
-
-                    $kurangiStok = $produk->stok - $data->jumlah;
-
-                    $produk->update(['stok' => $kurangiStok]);
 
                     DetailTransaksi::create([
                             'kode_transaksi' => $data->kode_transaksi,

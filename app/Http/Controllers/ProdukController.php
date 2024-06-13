@@ -49,14 +49,12 @@ class ProdukController extends Controller
                 'kode' => 'required|string|max:100',
                 'nama' => 'required|string|max:100',
                 'harga' => 'required|numeric|min:0',
-                'stok' => 'required|integer|min:0',
             ]);
 
             $produk = new Produk;
             $produk->kode = $request->kode;
             $produk->nama = $request->nama;
             $produk->harga = $request->harga;
-            $produk->stok = $request->stok;
             $produk->save();
 
             return redirect('/admin/produk')->with('sukses', 'Data berhasil di simpan');
@@ -94,13 +92,11 @@ class ProdukController extends Controller
             $request->validate([
                 'nama' => 'required|string|max:100',
                 'harga' => 'required|numeric|min:0',
-                'stok' => 'required|integer|min:0',
             ]);
 
             $produk = Produk::find($id);
             $produk->nama = $request->nama;
             $produk->harga = $request->harga;
-            $produk->stok = $request->stok;
             $produk->update();
 
             return redirect('/admin/produk')->with('sukses', 'Data berhasil di edit');

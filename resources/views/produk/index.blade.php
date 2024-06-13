@@ -55,7 +55,6 @@
                                             <th>Kode Produk</th>
                                             <th>Nama Produk</th>
                                             <th>Harga Produk</th>
-                                            <th>Stok</th>
                                             <th>Action</th>
                                         </tr>
                                     </thead>
@@ -66,12 +65,6 @@
                                                 <td>{{ $item->kode }}</td>
                                                 <td>{{ $item->nama }}</td>
                                                 <td>Rp{{ $item->formatRupiah('harga') }}</td>
-                                                @if ($item->stok <= 0)
-                                                    <td><span class="text-danger">Stok kosong</span></td>
-                                                @endif
-                                                @if ($item->stok > 0)
-                                                    <td>{{ $item->stok }}</td>
-                                                @endif
                                                 <td>
                                                     <form action="/{{ auth()->user()->role }}/produk/{{ $item->id }}"
                                                         id="delete-form">

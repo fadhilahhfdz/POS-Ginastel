@@ -16,7 +16,6 @@ return new class extends Migration
             $table->string('kode');
             $table->string('nama');
             $table->float('harga');
-            $table->integer('stok');
             $table->timestamps();
         });
     }

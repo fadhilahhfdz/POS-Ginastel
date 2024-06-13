@@ -270,7 +270,7 @@
                 });
             });
             setTimeout(function() {
-                window.open('/{{ auth()->user()->level }}/laporan/{{ session('berhasil') }}/print', '_blank');
+                window.open('/{{ auth()->user()->role }}/laporan/{{ session('berhasil') }}/print', '_blank');
             }, 2000);
         </script>
     @endif

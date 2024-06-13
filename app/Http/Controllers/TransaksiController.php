@@ -17,7 +17,7 @@ class TransaksiController extends Controller
     {
         $transaksi = Transaksi::orderBy('tanggal', 'desc')->get();
 
-        return view('transaksi.index', compact('transaksi'));
+        return view('laporan.index', compact('transaksi'));
     }
 
     /**
@@ -76,7 +76,7 @@ class TransaksiController extends Controller
         $transaksi = Transaksi::find($id_transaksi->id);
         $detail_transaksi = DetailTransaksi::where('kode_transaksi', $kode_transaksi)->get();
 
-        $pdf = Pdf::loadView('transaksi.print', compact('transaksi', 'detail_transaksi'));
+        $pdf = Pdf::loadView('laporan.print', compact('transaksi', 'detail_transaksi'));
         return $pdf->stream();
     }
 
@@ -92,7 +92,7 @@ class TransaksiController extends Controller
 
         $total = number_format($all, 0, ',', '.');
 
-        $pdf = Pdf::loadView('transaksi.totalPrint', compact('transaksi', 'dari', 'sampai', 'total'));
+        $pdf = Pdf::loadView('laporan.totalPrint', compact('transaksi', 'dari', 'sampai', 'total'));
         return $pdf->stream();
     }
 }

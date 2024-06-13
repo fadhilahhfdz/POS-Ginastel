@@ -20,8 +20,8 @@ class Kasir extends Model
         'jumlah',
         'total',
     ];
-
-    public function produk() {
-        return $this->belongsTo(Produk::class);
+    public function produk()
+    {
+        return $this->belongsTo(Produk::class, 'id_produk', 'id');
     }
 }

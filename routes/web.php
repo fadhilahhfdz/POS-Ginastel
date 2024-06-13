@@ -36,10 +36,12 @@ Route::group(['middleware' => ['auth', 'cekrole:kasir']], function() {
 
     Route::get('/kasir/kasir', [KasirController::class, 'index']);
     Route::post('/kasir/kasir/store', [KasirController::class, 'store']);
-    Route::post('/kasir/kasir/bayar/{kodeTransaksi}', [KasirController::class, 'bayar']);
+    Route::post('/kasir/kasir/bayar/{kodeTransaksi}', [KasirController::class, 'pembayaran']);
     Route::get('/kasir/kasir/{id}', [KasirController::class, 'destroy']);
     Route::get('/kasir/kasir/hapus/semua', [KasirController::class, 'hapusSemua']);
     Route::get('/kasir/laporan/{kodeTransaksi}/print', [TransaksiController::class, 'print']);
+
+    Route::get('/kasir/laporan', [TransaksiController::class, 'index']);
 });
 
 Route::group(['middleware' => ['auth', 'cekrole:admin']], function() {

@@ -17,7 +17,6 @@ class Produk extends Model
         'kode',
         'nama',
         'harga',
-        'stok',
     ];
 
     protected $guarded = [];
@@ -27,6 +26,6 @@ class Produk extends Model
     }
 
     public function Kasir() {
-        return $this->hasMany(Kasir::class);
+        return $this->hasMany(Kasir::class, 'id_produk', 'id');
     }
 }
