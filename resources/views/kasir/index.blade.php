@@ -27,7 +27,7 @@
                     <div class="col-12">
                         <div class="card">
                             <div class="card-header">
-                                <h3 class="card-title text-primary">Penjualan Kasir</h3>
+                                <h3 class="card-title">Penjualan Kasir</h3>
                                 <div class="card-tools">
                                     <div class="card-header-form">
                                         <button type="button" class="btn btn-sm btn-primary" data-toggle="modal"
@@ -40,7 +40,7 @@
                                     <div class="col-md-2">
                                         <div class="form-group">
                                             <label for="kasir">Nama Kasir :</label>
-                                            <select class="custom-select" name="invoice">
+                                            <select class="custom-select" name="kode_kasir">
                                                 <option value="{{ auth()->user()->kode }}">
                                                     {{ auth()->user()->nama }}
                                                 </option>
@@ -56,12 +56,12 @@
                                     </div>
                                     <div class="col-md-7">
                                         <div class="form-group float-right">
-                                            <label class="text-info" for="Total Belanja">Subtotal</label>
+                                            <label class="text-primary" for="Total Belanja">Subtotal</label>
                                             <div class="input-group-prepend">
-                                                <h1 class="text-info mr-2">Rp<br></h1>
+                                                <h1 class="text-primary mr-2">Rp<br></h1>
                                                 <input class="d-none" type="text" id="total" value="0"
                                                     name="total">
-                                                <h1 class="text-info" id="label-total">0</h1>
+                                                <h1 class="text-primary" id="label-total">0</h1>
                                             </div>
                                         </div>
                                     </div>

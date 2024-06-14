@@ -4,8 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta content="width=device-width, initial-scale=1, maximum-scale=1, shrink-to-fit=no" name="viewport">
-    <title>Login Kasir</title>
-    <link rel="icon" href="{{asset('assets/img/unsplash/logo.png')}}" type="image/x-icon">
+    <title>Login</title>
 
     <!-- General CSS Files -->
     <link rel="stylesheet" href="{{asset('assets/modules/bootstrap/css/bootstrap.min.css')}}">
@@ -32,15 +31,15 @@
                                 class="shadow-light rounded-circle"> -->
                         </div>
 
-                        <div class="card card-info shadow">
+                        <div class="card card-primary shadow">
                             <div class="card-header">
-                                <h4 class="text-info">Toko Kelontong</h4>
+                                <h4 class="text-primary">Login User</h4>
                             </div>
                             <div class="card-body">
                                 <form method="POST" action="/rolelogin" class="needs-validation">
                                     @csrf
                                     <div class="form-group">
-                                        <label class="text-info" for="email">Email</label>
+                                        <label class="text-primary" for="email">Email</label>
                                         <input id="email" type="email" class="form-control" name="email" tabindex="1"
                                             autofocus placeholder="Masukkan Email">
                                         <div class="invalid-feedback">
@@ -50,9 +49,9 @@
 
                                     <div class="form-group">
                                         <div class="d-block">
-                                            <label for="password" class="control-label text-info">Password</label>
+                                            <label for="password" class="control-label text-primary">Password</label>
                                             <div class="float-right d-none">
-                                                <a href="/forgot-password" class="text-small text-info">
+                                                <a href="/forgot-password" class="text-small text-primary">
                                                     Lupa Password?
                                                 </a>
                                             </div>
@@ -63,15 +62,15 @@
                                             </div>
                                         </div>
                                     </div>
-                                    <div class="form-group">
+                                    {{-- <div class="form-group">
                                         <span>Belum punya akun? </span>
-                                        <a href="/register" class="text-info">
+                                        <a href="/register" class="text-primary">
                                             Daftar
                                         </a>
-                                    </div>
+                                    </div> --}}
 
                                     <div class="form-group">
-                                        <button type="submit" class="btn btn-info btn-lg btn-block" tabindex="4">
+                                        <button type="submit" class="btn btn-primary btn-lg btn-block" tabindex="4">
                                             Login
                                         </button>
                                     </div>

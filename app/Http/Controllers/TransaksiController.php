@@ -95,4 +95,15 @@ class TransaksiController extends Controller
         $pdf = Pdf::loadView('laporan.totalPrint', compact('transaksi', 'dari', 'sampai', 'total'));
         return $pdf->stream();
     }
+
+    public function cari(Request $request)
+    {
+        $dari = $request->dari;
+        $sampai = $request->sampai;
+        $tanggalSampai = Carbon::parse($sampai)->addDays(1)->format('Y-m-d');
+        
+        $transaksi = Transaksi::whereBetween('tanggal', [$dari, $tanggalSampai])->get();
+        
+        return view('laporan.cari',compact('transaksi', 'dari', 'sampai'));
+    }
 }

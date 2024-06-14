@@ -13,7 +13,7 @@
                         <form action="/{{ auth()->user()->role }}/kasir/bayar/{{ $kode }}" method="POST"
                             id="form-penjualan">
                             @csrf
-                            <select class="custom-select" name="invoice" hidden>
+                            <select class="custom-select" name="kode_kasir" hidden>
                                 <option value="{{ auth()->user()->kode }}">
                                     {{ auth()->user()->nama }}
                                 </option>
@@ -23,9 +23,9 @@
                             <div class="form-group">
                                 <label for="Total Belanja">Subtotal</label>
                                 <div class="input-group-prepend">
-                                    <h1 class="text-info mr-2">Rp<br></h1>
+                                    <h1 class="text-primary mr-2">Rp<br></h1>
                                     <input class="d-none" type="text" name="total" id="total-bayar" value="0">
-                                    <h1 class="text-info" id="label-total-bayar">0</h1>
+                                    <h1 class="text-primary" id="label-total-bayar">0</h1>
                                 </div>
                             </div>
                             <div class="row">
@@ -40,19 +40,19 @@
                                     </div>
                                     <div class="row mb-2">
                                         <div class="col-md-3">
-                                            <button type="button" class="btn btn-info"
+                                            <button type="button" class="btn btn-primary"
                                                 onclick="setDibayarkan(10000)">10.000</button>
                                         </div>
                                         <div class="col-md-3">
-                                            <button type="button" class="btn btn-info"
+                                            <button type="button" class="btn btn-primary"
                                                 onclick="setDibayarkan(20000)">20.000</button>
                                         </div>
                                         <div class="col-md-3">
-                                            <button type="button" class="btn btn-info"
+                                            <button type="button" class="btn btn-primary"
                                                 onclick="setDibayarkan(50000)">50.000</button>
                                         </div>
                                         <div class="col-md-3">
-                                            <button type="button" class="btn btn-info"
+                                            <button type="button" class="btn btn-primary"
                                                 onclick="setDibayarkan(100000)">100.000</button>
                                         </div>
                                     </div>

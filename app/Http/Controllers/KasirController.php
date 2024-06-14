@@ -144,7 +144,7 @@ class KasirController extends Controller
                     'total' => 'required|numeric',
                     'bayar' => 'required|numeric',
                     'kembalian' => 'required|numeric',
-                    'invoice' => 'required|string|max:100',
+                    'kode_kasir' => 'required|string|max:100',
                 ]);
 
                 $tanggalSekarang = now('Asia/Jakarta')->format('Y-m-d H:i:s');;
@@ -153,7 +153,7 @@ class KasirController extends Controller
                 $transaksi->total = $request->total;
                 $transaksi->bayar = $request->bayar;
                 $transaksi->kembalian = $request->kembalian;
-                $transaksi->invoice = $request->invoice;
+                $transaksi->kode_kasir = $request->kode_kasir;
                 $transaksi->tanggal = $tanggalSekarang;
                 $transaksi->save();
 

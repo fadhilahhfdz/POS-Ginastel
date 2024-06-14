@@ -86,7 +86,7 @@
         </div>
         <div class="transaksi-details">
             <label>Kode Transaksi:</label><span>{{ $transaksi->kode_transaksi }}</span><br>
-            <label>Invoice:</label><span>{{ $transaksi->invoice }}</span><br>
+            <label>Kode Kasir:</label><span>{{ $transaksi->kode_kasir }}</span><br>
             <label>Waktu:</label><span>{{ $transaksi->tanggal }}</span><br>
             <table style="width: 100%; margin-bottom: 30px">
                 <thead>

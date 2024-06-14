@@ -42,6 +42,11 @@ Route::group(['middleware' => ['auth', 'cekrole:kasir']], function() {
     Route::get('/kasir/laporan/{kodeTransaksi}/print', [TransaksiController::class, 'print']);
 
     Route::get('/kasir/laporan', [TransaksiController::class, 'index']);
+    Route::get('/kasir/laporan/cari', [TransaksiController::class, 'cari']);
+
+    Route::get('/kasir/laporan/{dari}/{sampai}/print', [TransaksiController::class, 'totalPrint']);
+    Route::get('/kasir/laporan/{kodeTransaksi}', [TransaksiController::class, 'show']);
+
 });
 
 Route::group(['middleware' => ['auth', 'cekrole:admin']], function() {
@@ -52,4 +57,11 @@ Route::group(['middleware' => ['auth', 'cekrole:admin']], function() {
     Route::get('admin/produk/{id}/edit', [ProdukController::class, 'edit']);
     Route::put('admin/produk/{id}', [ProdukController::class, 'update']);
     Route::get('admin/produk/{id}', [ProdukController::class, 'destroy']);
+
+    Route::get('/admin/laporan', [TransaksiController::class, 'index']);
+    Route::get('/admin/laporan/cari', [TransaksiController::class, 'cari']);
+    
+    Route::get('/admin/laporan/{dari}/{sampai}/print', [TransaksiController::class, 'totalPrint']);
+    Route::get('/admin/laporan/{kodeTransaksi}/print', [TransaksiController::class, 'print']);
+    Route::get('/admin/laporan/{kodeTransaksi}', [TransaksiController::class, 'show']);
 });

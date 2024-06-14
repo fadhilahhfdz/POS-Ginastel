@@ -27,23 +27,13 @@
                     <div class="col-12">
                         <div class="card">
                             <div class="card-header">
-                                <h3 class="card-title text-primary">Data Produk</h3>
+                                <h3 class="card-title">Data Produk</h3>
 
                                 <div class="card-tools">
                                     <div class="card-header-form">
                                         <button type="button" class="btn btn-sm btn-primary" data-toggle="modal"
                                             data-target="#form-tambah"><i class="fa fa-plus"></i> Tambah</button>
                                     </div>
-                                    {{-- <div class="input-group input-group-sm" style="width: 150px;">
-                                        <input type="text" name="table_search" class="form-control float-right"
-                                            placeholder="Search">
-
-                                        <div class="input-group-append">
-                                            <button type="submit" class="btn btn-default">
-                                                <i class="fas fa-search"></i>
-                                            </button>
-                                        </div>
-                                    </div> --}}
                                 </div>
                             </div>
                             <!-- /.card-header -->

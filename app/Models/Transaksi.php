@@ -17,7 +17,7 @@ class Transaksi extends Model
         'total',
         'bayar',
         'kembalian',
-        'invoice',
+        'kode_kasir',
     ];
 
     public function user() {

@@ -17,7 +17,7 @@ return new class extends Migration
             $table->float('total');
             $table->float('bayar');
             $table->float('kembalian');
-            $table->string('invoice');
+            $table->string('kode_kasir');
             $table->datetime('tanggal');
             $table->timestamps();
         });
