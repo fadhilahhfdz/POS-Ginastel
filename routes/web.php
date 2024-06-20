@@ -4,7 +4,9 @@ use App\Http\Controllers\AuthController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\KasirController;
 use App\Http\Controllers\ProdukController;
+use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\TransaksiController;
+use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -64,4 +66,12 @@ Route::group(['middleware' => ['auth', 'cekrole:admin']], function() {
     Route::get('/admin/laporan/{dari}/{sampai}/print', [TransaksiController::class, 'totalPrint']);
     Route::get('/admin/laporan/{kodeTransaksi}/print', [TransaksiController::class, 'print']);
     Route::get('/admin/laporan/{kodeTransaksi}', [TransaksiController::class, 'show']);
+
+    Route::get('/admin/user', [UserController::class, 'index']);
+    Route::post('/admin/user/store', [UserController::class, 'store']);
+    Route::get('/admin/user/{id}/edit', [UserController::class, 'edit']);
+    Route::put('/admin/user/{id}', [UserController::class, 'update']);
+    Route::get('/admin/user/{id}', [UserController::class, 'destroy']);
+    Route::get('/admin/profile/{id}', [ProfileController::class, 'edit']);
+    Route::put('/admin/profile/{id}', [ProfileController::class, 'update']);
 });

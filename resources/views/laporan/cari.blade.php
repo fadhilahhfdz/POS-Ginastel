@@ -26,7 +26,7 @@
             <div class="row">
                 <div class="col-12">
                     <div class="alert alert-success">
-                        <p><span class="font-weight-bold">Laporan Tanggal: {{$dari}} Sampai {{$sampai}}</span></p>
+                        <p class="m-0"><span class="font-weight-bold">Laporan Tanggal: {{$dari}} Sampai {{$sampai}}</span></p>
                     </div>
                     <div class="card shadow">
                         <div class="card-header bg-white justify-content-center">

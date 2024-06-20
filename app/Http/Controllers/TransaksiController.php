@@ -43,7 +43,7 @@ class TransaksiController extends Controller
     {
         $data = DetailTransaksi::where('kode_transaksi', $kodeTransaksi)->get();
 
-        return view('transaksi.view', compact('data'));
+        return view('laporan.view', compact('data'));
     }
 
     /**
