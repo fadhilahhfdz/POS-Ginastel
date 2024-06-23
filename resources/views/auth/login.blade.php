@@ -50,11 +50,6 @@
                                     <div class="form-group">
                                         <div class="d-block">
                                             <label for="password" class="control-label text-primary">Password</label>
-                                            <div class="float-right d-none">
-                                                <a href="/forgot-password" class="text-small text-primary">
-                                                    Lupa Password?
-                                                </a>
-                                            </div>
                                             <input id="password" type="password" class="form-control" name="password"
                                                 tabindex="2" placeholder="Masukan Password">
                                             <div class="invalid-feedback">

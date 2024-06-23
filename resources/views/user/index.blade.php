@@ -69,10 +69,10 @@
                                                     <form action="/{{ auth()->user()->role }}/user/{{ $item->id }}"
                                                         id="delete-form">
                                                         <a href="/{{ auth()->user()->role }}/user/{{ $item->id }}/edit"
-                                                            class="btn btn-sm btn-outline-warning"><i class="fas fa-edit"></i>Edit</a>
+                                                            class="btn btn-sm btn-warning text-white"><i class="fas fa-edit"></i>Edit</a>
                                                         @csrf
                                                         @method('delete')
-                                                        <button type="button" class="btn btn-sm btn-outline-danger" id="{{$item->nama}}" data-id="{{$item->id}}" onclick="confirmDelete(this)"><i class="fas fa-trash"></i>Hapus</button>
+                                                        <button type="button" class="btn btn-sm btn-danger" id="{{$item->nama}}" data-id="{{$item->id}}" onclick="confirmDelete(this)"><i class="fas fa-trash"></i>Hapus</button>
                                                     </form>
                                                 </td>
                                             </tr>
@@ -90,8 +90,8 @@
         </section>
         <!-- /.content -->
     </div>
+    @include('user.form')
 @endsection
-@include('user.form')
 @push('script')
 <script>
     $(document).ready(function () {

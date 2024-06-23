@@ -30,9 +30,9 @@
                                 class="shadow-light rounded-circle"> -->
                         </div>
 
-                        <div class="card card-info shadow">
+                        <div class="card card-primary shadow">
                             <div class="card-header">
-                                <h4 class="text-info">Daftar Baru</h4>
+                                <h4 class="text-primary">Daftar Baru</h4>
                             </div>
                             @error('status')
                             <div class="alert alert-danger" role="alert">
@@ -45,7 +45,7 @@
                                     <div class="row">
                                         <div class="col-md-6">
                                             <div class="form-group">
-                                                <label class="text-info" for="email">Nama</label>
+                                                <label class="text-primary" for="email">Nama</label>
                                                 <input id="email" type="text" class="form-control" name="nama"
                                                     tabindex="1" autofocus placeholder="Masukkan Nama" oninput="validasiInput(this)">
                                             </div>
@@ -53,7 +53,7 @@
 
                                         <div class="col-md-6">
                                             <div class="form-group">
-                                                <label class="text-info" for="email">Email</label>
+                                                <label class="text-primary" for="email">Email</label>
                                                 <input id="email" type="email" class="form-control" name="email"
                                                     tabindex="1" autofocus placeholder="Masukkan Email">
                                             </div>
@@ -63,7 +63,7 @@
                                             <div class="form-group">
                                                 <div class="d-block">
                                                     <label for="password"
-                                                        class="control-label text-info">Password</label>
+                                                        class="control-label text-primary">Password</label>
                                                     <input id="password" type="password" class="form-control"
                                                         name="password" tabindex="2" placeholder="Masukan Password">
                                                     <div id="warning-message" style="color: red; display: none;">
@@ -76,7 +76,7 @@
 
                                         <div class="col-md-6">
                                             <div class="form-group">
-                                                <label class="control-label text-info" for="Role">Role</label>
+                                                <label class="control-label text-primary" for="Role">Role</label>
                                                 <select class="custom-select" name="role" id="">
                                                     <option value="">Pilih Role...</option>
                                                     <option value="admin">Admin</option>
@@ -86,15 +86,15 @@
                                         </div>
                                     </div>
 
-                                    <div class="form-group">
+                                    {{-- <div class="form-group">
                                         <span>Sudah punya akun? </span>
-                                        <a href="/login" class="text-info">
+                                        <a href="/login" class="text-primary">
                                             Login
                                         </a>
-                                    </div>
+                                    </div> --}}
 
                                     <div class="form-group col-sm-5 mx-auto">
-                                        <button type="submit" class="btn btn-info btn-lg btn-block" tabindex="4">
+                                        <button type="submit" class="btn btn-primary btn-lg btn-block" tabindex="4">
                                             Register
                                         </button>
                                     </div>

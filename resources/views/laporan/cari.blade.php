@@ -83,7 +83,7 @@
                                         <td>{{$item->formatRupiah('kembalian')}}</td>
                                         <td>
                                             <a href="/{{auth()->user()->role}}/laporan/{{$item->kode_transaksi}}/print" target="_blank"
-                                                class="btn btn-sm btn-outline-danger"><i class="fa fa-print"></i> Print</a>
+                                                class="btn btn-sm btn-danger"><i class="fa fa-print"></i> Print</a>
                                         </td>
                                     </tr>
                                     @endforeach

@@ -101,7 +101,7 @@
                                                         <td>
                                                             <div class="aksi d-flex">
                                                                 <button type="submit"
-                                                                    class="btn btn-sm btn-warning mr-2"><i
+                                                                    class="btn btn-sm btn-warning mr-2 text-white"><i
                                                                         class="fa fa-edit"></i></button>
                                                     </form>
                                                     <form action="/{{ auth()->user()->role }}/kasir/{{ $item->id }}"

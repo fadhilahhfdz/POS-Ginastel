@@ -6,7 +6,8 @@ use App\Models\DetailTransaksi;
 use App\Models\Transaksi;
 use Barryvdh\DomPDF\Facade\Pdf;
 use Illuminate\Http\Request;
-use Illuminate\Support\Carbon;
+use Carbon\Carbon;
+use Illuminate\Support\Facades\Auth;
 
 class TransaksiController extends Controller
 {
@@ -15,9 +16,17 @@ class TransaksiController extends Controller
      */
     public function index()
     {
-        $transaksi = Transaksi::orderBy('tanggal', 'desc')->get();
-
-        return view('laporan.index', compact('transaksi'));
+        if (auth()->user()->role == 'kasir') {
+            $user = Auth::user();
+    
+            $transaksi = Transaksi::where('kode_kasir', $user->kode)->orderBy('tanggal', 'desc')->get();
+    
+            return view('laporan.index', compact('transaksi'));
+        } else {
+            $transaksi = Transaksi::orderBy('tanggal', 'desc')->get();
+    
+            return view('laporan.index', compact('transaksi'));
+        }
     }
 
     /**

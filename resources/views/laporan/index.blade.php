@@ -85,10 +85,10 @@
                                             <td>{{ $item->formatRupiah('kembalian') }}</td>
                                             <td>
                                                 <a href="/{{ auth()->user()->role }}/laporan/{{ $item->kode_transaksi }}"
-                                                    class="btn btn-sm btn-outline-info"><i class="fa fa-eye"></i>
+                                                    class="btn btn-sm btn-primary"><i class="fa fa-eye"></i>
                                                     Detail</a>
                                                 <a href="/{{ auth()->user()->role }}/laporan/{{ $item->kode_transaksi }}/print"
-                                                    target="_blank" class="btn btn-sm btn-outline-danger"><i
+                                                    target="_blank" class="btn btn-sm btn-danger"><i
                                                         class="fa fa-print"></i> Print</a>
                                             </td>
                                         </tr>

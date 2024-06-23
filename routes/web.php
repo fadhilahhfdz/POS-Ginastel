@@ -24,8 +24,8 @@ Route::get('/', function () {
     return view('auth.login');
 });
 
-Route::get('/register', [AuthController::class, 'index']);
-Route::post('/user/register', [AuthController::class, 'store'])->name('store');
+// Route::get('/register', [AuthController::class, 'index']);
+// Route::post('/user/register', [AuthController::class, 'store'])->name('store');
 
 Route::post('/rolelogin', [AuthController::class, 'roleLogin']);
 Route::get('/logout', [AuthController::class, 'logout']);
@@ -41,12 +41,11 @@ Route::group(['middleware' => ['auth', 'cekrole:kasir']], function() {
     Route::post('/kasir/kasir/bayar/{kodeTransaksi}', [KasirController::class, 'pembayaran']);
     Route::get('/kasir/kasir/{id}', [KasirController::class, 'destroy']);
     Route::get('/kasir/kasir/hapus/semua', [KasirController::class, 'hapusSemua']);
+    Route::put('/kasir/kasir/{id}/{barang_id}/edit', [KasirController::class, 'update']);
+
     Route::get('/kasir/laporan/{kodeTransaksi}/print', [TransaksiController::class, 'print']);
 
     Route::get('/kasir/laporan', [TransaksiController::class, 'index']);
-    Route::get('/kasir/laporan/cari', [TransaksiController::class, 'cari']);
-
-    Route::get('/kasir/laporan/{dari}/{sampai}/print', [TransaksiController::class, 'totalPrint']);
     Route::get('/kasir/laporan/{kodeTransaksi}', [TransaksiController::class, 'show']);
 
 });
@@ -69,9 +68,6 @@ Route::group(['middleware' => ['auth', 'cekrole:admin']], function() {
 
     Route::get('/admin/user', [UserController::class, 'index']);
     Route::post('/admin/user/store', [UserController::class, 'store']);
-    Route::get('/admin/user/{id}/edit', [UserController::class, 'edit']);
     Route::put('/admin/user/{id}', [UserController::class, 'update']);
     Route::get('/admin/user/{id}', [UserController::class, 'destroy']);
-    Route::get('/admin/profile/{id}', [ProfileController::class, 'edit']);
-    Route::put('/admin/profile/{id}', [ProfileController::class, 'update']);
 });
