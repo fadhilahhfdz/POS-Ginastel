@@ -59,7 +59,7 @@
                                 <h4 class="">Riwayat Transaksi</h4>
                             </div>
                         @endif
-                        <div class="card-body bg-white p-2">
+                        <div class="card-body bg-white p-2 table-responsive">
                             <table class="table table-hover" id="table">
                                 <thead>
                                     <tr>

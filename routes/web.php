@@ -68,6 +68,7 @@ Route::group(['middleware' => ['auth', 'cekrole:admin']], function() {
 
     Route::get('/admin/user', [UserController::class, 'index']);
     Route::post('/admin/user/store', [UserController::class, 'store']);
-    Route::put('/admin/user/{id}', [UserController::class, 'update']);
+    // Route::get('/admin/user/{id}/edit', [UserController::class, 'edit']);
+    // Route::put('/admin/user/{id}', [UserController::class, 'update']);
     Route::get('/admin/user/{id}', [UserController::class, 'destroy']);
 });

@@ -39,21 +39,17 @@
                                         </div>
                                     </div>
                                     <div class="row mb-2">
-                                        <div class="col-md-3">
-                                            <button type="button" class="btn btn-primary"
-                                                onclick="setDibayarkan(10000)">10.000</button>
+                                        <div class="col-6 col-sm-4 col-md-3 mb-3">
+                                            <button type="button" class="btn btn-primary btn-block" onclick="setDibayarkan(10000)">10.000</button>
                                         </div>
-                                        <div class="col-md-3">
-                                            <button type="button" class="btn btn-primary"
-                                                onclick="setDibayarkan(20000)">20.000</button>
+                                        <div class="col-6 col-sm-4 col-md-3 mb-3">
+                                            <button type="button" class="btn btn-primary btn-block" onclick="setDibayarkan(20000)">20.000</button>
                                         </div>
-                                        <div class="col-md-3">
-                                            <button type="button" class="btn btn-primary"
-                                                onclick="setDibayarkan(50000)">50.000</button>
+                                        <div class="col-6 col-sm-4 col-md-3 mb-3">
+                                            <button type="button" class="btn btn-primary btn-block" onclick="setDibayarkan(50000)">50.000</button>
                                         </div>
-                                        <div class="col-md-3">
-                                            <button type="button" class="btn btn-primary"
-                                                onclick="setDibayarkan(100000)">100.000</button>
+                                        <div class="col-6 col-sm-4 col-md-3 mb-3">
+                                            <button type="button" class="btn btn-primary btn-block" onclick="setDibayarkan(100000)">100.000</button>
                                         </div>
                                     </div>
                                 </div>

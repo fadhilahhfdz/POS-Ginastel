@@ -30,7 +30,7 @@
                                 <h3 class="card-title text-primary">Detail Laporan</h3>
                             </div>
                             <!-- /.card-header -->
-                            <div class="card-body">
+                            <div class="card-body table-responsive">
                                 <table class="table table-hover" id="table">
                                     <thead>
                                         <tr>
@@ -57,7 +57,7 @@
                                 </table>
                             </div>
                             <div class="card-footer bg-white">
-                                <a href="/{{ auth()->user()->role }}/laporan" class="btn btn-sm btn-outline-warning"><i
+                                <a href="/{{ auth()->user()->role }}/laporan" class="btn btn-sm btn-warning"><i
                                         class="fas fa-caret-left"></i>Kembali</a>
                             </div>
                             <!-- /.card-body -->

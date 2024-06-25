@@ -48,11 +48,6 @@
                                         <input type="text" class="form-control" name="harga" id="harga"
                                             value="{{ $produk->harga }}">
                                     </div>
-                                    <div class="form-group">
-                                        <label for="stok">Stok :</label>
-                                        <input type="number" class="form-control" name="stok"
-                                            value="{{ $produk->stok }}">
-                                    </div>
                                 </div>
                             </div>
                             <a href="/{{ auth()->user()->role }}/produk" class="btn btn-danger">

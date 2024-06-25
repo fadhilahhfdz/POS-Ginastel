@@ -57,7 +57,7 @@
                                 </div>
                             </form>
                         </div>
-                        <div class="card-body p-2">
+                        <div class="card-body p-2 table-responsive">
                             <table class="table table-hover" id="table">
                                 <thead>
                                     <tr>

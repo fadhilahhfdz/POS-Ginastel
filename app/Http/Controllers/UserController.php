@@ -80,7 +80,9 @@ class UserController extends Controller
      */
     public function edit($id)
     {
-        //
+        $user = User::find($id);
+
+        return view('user.edit', compact('user'));
     }
 
     /**
@@ -99,6 +101,7 @@ class UserController extends Controller
                 $user->nama = $request->nama;
                 $user->email = $request->email;
                 $user->password = Hash::make($request->password);
+                $user->update();
             }
 
             return redirect('/admin/user')->with('sukses', 'Data berhasil disimpan');

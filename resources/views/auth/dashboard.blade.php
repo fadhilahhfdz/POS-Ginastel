@@ -72,7 +72,7 @@
                 <div class="card-header bg-white">
                   <h4>Detail Transaksi</h4>
                 </div>
-                <div class="card-body p-2">
+                <div class="card-body p-2 table-responsive">
                   <table class="table table-hover" id="table">
                     <thead>
                       <tr>

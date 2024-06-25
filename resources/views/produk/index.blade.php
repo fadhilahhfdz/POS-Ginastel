@@ -59,11 +59,11 @@
                                                     <form action="/{{ auth()->user()->role }}/produk/{{ $item->id }}"
                                                         id="delete-form">
                                                         <a href="/{{ auth()->user()->role }}/produk/{{ $item->id }}/edit"
-                                                            class="btn btn-warning text-white"><i class="fas fa-edit"></i> Edit
+                                                            class="btn btn-sm btn-warning text-white"><i class="fas fa-edit"></i> Edit
                                                         </a>
                                                         @csrf
                                                         @method('delete')
-                                                        <button type="button" class="btn btn-danger"
+                                                        <button type="button" class="btn btn-sm btn-danger"
                                                             id="{{ $item->kode }}" data-id="{{ $item->id }}"
                                                             onclick="confirmDelete(this)"><i class="fas fa-trash"></i>
                                                             Delete</button>
