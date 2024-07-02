@@ -93,8 +93,7 @@
                                                         </td>
                                                         <td class="jumlah" value="{{ $item->jumlah }}" style="width: 20%">
                                                             <input type="number" class="form-control"
-                                                                value="{{ $item->jumlah }}" name="jumlah" min="1"
-                                                                max="{{ $item->stok }}">
+                                                                value="{{ $item->jumlah }}" name="jumlah" min="1">
                                                         </td>
                                                         <td class="total" value="{{ $item->total }}">
                                                             {{ $item->formatRupiah('total') }}</td>
@@ -103,6 +102,7 @@
                                                                 <button type="submit"
                                                                     class="btn btn-sm btn-warning mr-2 text-white"><i
                                                                         class="fa fa-edit"></i></button>
+                                                            </div>  ,l
                                                     </form>
                                                     <form action="/{{ auth()->user()->role }}/kasir/{{ $item->id }}"
                                                         id="delete-form">

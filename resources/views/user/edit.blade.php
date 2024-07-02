@@ -31,7 +31,7 @@
                             </div>
                             <!-- /.card-header -->
                             <div class="card-body">
-                                <form action="/{{ auth()->user()->role }}/user/{{ $user->id }}">
+                                <form action="/{{ auth()->user()->role }}/user/{{ $user->id }}" method="POST">
                                     @method('PUT')
                                     @csrf
                                     <div class="row">

@@ -114,7 +114,7 @@
 
         function confirmDelete(button) {
 
-            event.preventDefault()
+            event.preventDefault();
             const id = button.getAttribute('data-id');
             const kode = button.getAttribute('id');
 
