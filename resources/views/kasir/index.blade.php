@@ -102,7 +102,7 @@
                                                                 <button type="submit"
                                                                     class="btn btn-sm btn-warning mr-2 text-white"><i
                                                                         class="fa fa-edit"></i></button>
-                                                            </div>  ,l
+                                                            </div>
                                                     </form>
                                                     <form action="/{{ auth()->user()->role }}/kasir/{{ $item->id }}"
                                                         id="delete-form">

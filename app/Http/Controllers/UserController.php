@@ -63,7 +63,7 @@ class UserController extends Controller
 
             return redirect('/admin/user')->with('sukses', 'Data berhasil disimpan');
         } catch (\Exception $e) {
-            return redirect('/admin/userr')->with('gagal', 'Data Gaga disimpan. '.$e->getMessage());
+            return redirect('/admin/userr')->with('gagal', 'Data Gagal disimpan. '.$e->getMessage());
         }
     }
 
